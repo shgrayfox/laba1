@@ -1,15 +1,13 @@
 #pragma once
 #include <iostream>
 #define TOMAX 20
-#define NMAX 5
 #define TYPEMAX 15
 using namespace std;
 
-class AEROFLOT
-{
+class AEROFLOT{
 private:
 	char* to;
-	char* number;
+	int number;
 	char* type;
 public:
 	AEROFLOT();
@@ -17,10 +15,10 @@ public:
 	AEROFLOT(const AEROFLOT &nt);
 	~AEROFLOT();
 	char* getTo() const;
-	char* getNumber() const;
+	int getNumber() const;
 	char* getType() const;
 	void setTo(char* t);
-	void setNumber(char* num);
+	void setNumber(int num);
 	void setType(char* ty);
 	friend ostream& operator <<(ostream& output, AEROFLOT& ptr);
 	friend void operator >> (istream& input, AEROFLOT& ptr);
