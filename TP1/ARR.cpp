@@ -3,7 +3,6 @@
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
-#include <stdio.h>
 using namespace std;
 
 ARRAY::ARRAY(){
@@ -20,7 +19,9 @@ ARRAY::ARRAY(int d){
 }
 
 ARRAY::~ARRAY() {
-		delete aero;
+		for (i = 0; i < NARR; ++i)
+			delete &aero[i];
+		cout << "\tСписок удалён." << endl;
 };
 
 void ARRAY::show(){
@@ -28,15 +29,21 @@ void ARRAY::show(){
 		cout << i + 1 << ": " << *(aero + i);
 }
 
-void ARRAY::search(char* t){
+void ARRAY::search(){
+	cout << "Введите пункт назначения: ";
+	char to[TOMAX];
+	cin >> to;
 	int mn = 0;
-		for (i = 0; i < NARR; ++i)
-			if (strcmp(aero[i].getTo(), t) == 0) {
-				mn++;
-				cout << mn << ": " << aero[i];
-			}
-		if (mn == 0)
-			cout << endl << "Нет искомых рейсов." << endl;
+	char* n1;
+	for (j = 0; j < NARR; ++j) {
+		n1 = aero[j].getTo();
+		if (strcmp(n1, to) == 0) {
+			mn++;
+			cout << j + 1 << ": " << *(aero + j);
+		}
+	}
+	if (mn < 1)
+		throw ERROR_400;
 }
 
 void ARRAY::sort(){

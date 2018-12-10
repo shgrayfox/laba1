@@ -1,7 +1,7 @@
 #pragma once
 #include "AEROFLOT.h"
 #define NARR 7
-#define ERROR_404 404
+#define ERROR_400 400
 
 class ARRAY{
 private:
@@ -12,6 +12,6 @@ public:
 	ARRAY(int d);
 	~ARRAY();
 	void show();
-	void search(char* t);
+	void search();
 	void sort();
 };

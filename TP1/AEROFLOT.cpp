@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
-#include <string.h>
+#include <string>
 using namespace std;
 
 AEROFLOT::AEROFLOT(){

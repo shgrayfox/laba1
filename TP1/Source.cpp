@@ -1,12 +1,12 @@
 #include "ARR.h"
 #include <iostream>
 #include <windows.h>
-#include <locale.h>
+#include <locale>
 using namespace std;
 
 int main(){
 	int ch;
-	char* to = "-";
+	char* to = "---";
 	bool flag = false;
 	system("chcp 1251>nul");
 	ARRAY* a = new ARRAY(0);
@@ -26,9 +26,18 @@ int main(){
 			a->sort();
 			break;
 		case (3):
-			cout << "Введите пункт назначения: ";
-			cin >> to;
-			a->search(to);
+			try{
+				a->search();
+			}
+			catch (int error){
+				switch (error) {
+				case ERROR_400:
+					cout << endl << "\tНет рейсов в данный пункт назначения." << endl;
+					break;
+				default:
+					cout << endl << "\tНеизвестная ошибка." << endl;
+				}
+			}
 			break;
 		case (0):
 			delete a;
