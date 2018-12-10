@@ -19,8 +19,10 @@ ARRAY::ARRAY(int d){
 }
 
 ARRAY::~ARRAY() {
-		for (i = 0; i < NARR; ++i)
-			delete &aero[i];
+	for (i = NARR-1; i >0; --i) {
+		AEROFLOT ptr = aero[i];
+			delete &ptr;
+		}
 		cout << "\tСписок удалён." << endl;
 };
 
