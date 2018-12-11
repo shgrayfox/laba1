@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "AEROFLOT.h"
 #define NARR 7
 #define ERROR_400 400

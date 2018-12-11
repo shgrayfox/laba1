@@ -1,4 +1,4 @@
-#include "AEROFLOT.h"
+ï»¿#include "AEROFLOT.h"
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
@@ -7,52 +7,52 @@ using namespace std;
 
 AEROFLOT::AEROFLOT(){
 	cin >> *this;
-	cout << "\tÐåéñ ñîçäàí." << endl << endl;
+	cout << "\tÐ ÐµÐ¹Ñ ÑÐ¾Ð·Ð´Ð°Ð½." << endl << endl;
 };
 
 AEROFLOT::AEROFLOT(int n){
 	bool flag = false;
 	switch (n) {
 	case 1:
-		to = "Ìîñêâà";
+		to = "ÐœÐ¾ÑÐºÐ²Ð°";
 		number = 174;
-		type = "Òó-134";
+		type = "Ð¢Ñƒ-134";
 		flag = true;
 		break;
 	case 2:
-		to = "Ñàíêò-Ïåòåðáóðã";
+		to = "Ð¡Ð°Ð½ÐºÑ‚-ÐŸÐµÑ‚ÐµÑ€Ð±ÑƒÑ€Ð³";
 		number = 175;
-		type = "Òó-134";
+		type = "Ð¢Ñƒ-134";
 		flag = true;
 		break;
 	case 3:
-		to = "Ìîñêâà";
+		to = "ÐœÐ¾ÑÐºÐ²Ð°";
 		number = 246;
-		type = "Áîèíã-747";
+		type = "Ð‘Ð¾Ð¸Ð½Ð³-747";
 		flag = true;
 		break;
 	case 4:
-		to = "Ñàíêò-Ïåòåðáóðã";
+		to = "Ð¡Ð°Ð½ÐºÑ‚-ÐŸÐµÑ‚ÐµÑ€Ð±ÑƒÑ€Ð³";
 		number = 245;
-		type = "Áîèíã-777";
+		type = "Ð‘Ð¾Ð¸Ð½Ð³-777";
 		flag = true;
 		break;
 	case 5:
-		to = "Êóðãàí";
+		to = "ÐšÑƒÑ€Ð³Ð°Ð½";
 		number = 178;
-		type = "ÈË-86";
+		type = "Ð˜Ð›-86";
 		flag = true;
 		break;
 	case 6:
-		to = "Êóðãàí";
+		to = "ÐšÑƒÑ€Ð³Ð°Ð½";
 		number = 74;
-		type = "ÈË-86";
+		type = "Ð˜Ð›-86";
 		flag = true;
 		break;
 	case 7:
-		to = "Ìîñêâà";
+		to = "ÐœÐ¾ÑÐºÐ²Ð°";
 		number = 14;
-		type = "Òó-134";
+		type = "Ð¢Ñƒ-134";
 		flag = true;
 		break;
 	case 0:
@@ -63,9 +63,9 @@ AEROFLOT::AEROFLOT(int n){
 		type = "-";
 	}
 	if (flag == true)
-		cout << "\tÐåéñ ïî óìîë÷àíèþ ñîçäàí." << endl;
+		cout << "\tÐ ÐµÐ¹Ñ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ ÑÐ¾Ð·Ð´Ð°Ð½." << endl;
 	else
-		cout << "\tÏóñòàÿ çàïèñü." << endl;
+		cout << "\tÐŸÑƒÑÑ‚Ð°Ñ Ð·Ð°Ð¿Ð¸ÑÑŒ." << endl;
 };
 
 AEROFLOT::AEROFLOT(const AEROFLOT &nt){
@@ -77,7 +77,7 @@ AEROFLOT::AEROFLOT(const AEROFLOT &nt){
 }
 
 AEROFLOT::~AEROFLOT(){
-		cout << "\tÓñïåøíîå óäàëåíèå." << endl;	
+	cout << "Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ. ";	
 };
 
 void AEROFLOT::setTo(char* t) { to = t; };
@@ -88,18 +88,18 @@ int AEROFLOT::getNumber() const { return number; }
 char* AEROFLOT::getType() const { return type; }
 
 ostream& operator <<(ostream& output, AEROFLOT& ptr){
-	cout << "Íàçâàíèå ïóíêòà íàçíà÷åíèÿ: " << ptr.to << endl << "Íîìåð ðåéñà: " << ptr.number << endl << "Òèï ñàìîëåòà: " << ptr.type << endl << endl;
+	cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¿ÑƒÐ½ÐºÑ‚Ð° Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: " << ptr.to << endl << "ÐÐ¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: " << ptr.number << endl << "Ð¢Ð¸Ð¿ ÑÐ°Ð¼Ð¾Ð»ÐµÑ‚Ð°: " << ptr.type << endl << endl;
 	return output;
 }
 void operator >> (istream& input, AEROFLOT& ptr){
 	ptr.to = new char[TOMAX];
 	ptr.number = 0;
 	ptr.type = new char[TYPEMAX];
-	cout << "Íàçâàíèå ïóíêòà íàçíà÷åíèÿ: ";	
+	cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¿ÑƒÐ½ÐºÑ‚Ð° Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: ";	
 	cin >> ptr.to;
-	cout << "Íîìåð ðåéñà: ";
+	cout << "ÐÐ¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: ";
 	cin >> ptr.number;
-	cout << "Òèï ñàìîëåòà: ";
+	cout << "Ð¢Ð¸Ð¿ ÑÐ°Ð¼Ð¾Ð»ÐµÑ‚Ð°: ";
 	cin >> ptr.type;
 }
 

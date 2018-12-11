@@ -1,4 +1,4 @@
-#include"ARR.h"
+ï»¿#include"ARR.h"
 #include "AEROFLOT.h"
 #include <iostream>
 #include <cstring>
@@ -6,24 +6,22 @@
 using namespace std;
 
 ARRAY::ARRAY(){
-	cout << "Ââåäèòå " << NARR << " çàïèñåé:" << endl << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ " << NARR << " Ð·Ð°Ð¿Ð¸ÑÐµÐ¹:" << endl << endl;
 	aero = new AEROFLOT[NARR];
-	cout << "\tÑïèñîê ñîçäàí." << endl;
+	cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº ÑÐ¾Ð·Ð´Ð°Ð½." << endl;
 }
 
 ARRAY::ARRAY(int d){
 	aero = (AEROFLOT*)malloc(sizeof(AEROFLOT)*NARR);
 	for (int i = 0; i < NARR; ++i)
 		aero[i] = *(new AEROFLOT(i + 1));
-	cout << "\tÑïèñîê ïî óìîë÷àíèþ ñîçäàí." << endl;
+	cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ ÑÐ¾Ð·Ð´Ð°Ð½." << endl;
 }
 
 ARRAY::~ARRAY() {
-	for (i = NARR-1; i >0; --i) {
-		AEROFLOT ptr = aero[i];
-			delete &ptr;
-		}
-		cout << "\tÑïèñîê óäàë¸í." << endl;
+	//for (int i = 0; i < NARR; ++i)
+	delete aero;
+	cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº ÑƒÐ´Ð°Ð»Ñ‘Ð½." << endl;
 };
 
 void ARRAY::show(){
@@ -32,7 +30,7 @@ void ARRAY::show(){
 }
 
 void ARRAY::search(){
-	cout << "Ââåäèòå ïóíêò íàçíà÷åíèÿ: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: ";
 	char to[TOMAX];
 	cin >> to;
 	int mn = 0;
@@ -57,5 +55,5 @@ void ARRAY::sort(){
 			if (n1 > n2)
 				swap(aero[k], aero[j]);
 		}
-	cout << "Ñîðòèðîâêà çàâåðøåíà" << endl;
+	cout << "Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð°" << endl;
 }

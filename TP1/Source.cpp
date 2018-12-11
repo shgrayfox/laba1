@@ -1,4 +1,4 @@
-#include "ARR.h"
+ï»¿#include "ARR.h"
 #include <iostream>
 #include <windows.h>
 #include <locale>
@@ -6,14 +6,13 @@ using namespace std;
 
 int main(){
 	int ch;
-	char* to = "---";
 	bool flag = false;
 	system("chcp 1251>nul");
 	ARRAY* a = new ARRAY(0);
-	system("cls");
 	a->sort();
+	system("cls");
 	while (1) {
-		cout << endl << "1: Âûâîä ñïèñêà ðåéñîâ." << endl << "2: Èçìåíèòü ñïèñîê ðåéñîâ." << endl << "3: Ïîèñê ðåéñîâ ïî ïóíêòó íàçíà÷åíèÿ." << endl << "0: Âûõîä." << endl;
+		cout << endl << "1: Ð’Ñ‹Ð²Ð¾Ð´ ÑÐ¿Ð¸ÑÐºÐ° Ñ€ÐµÐ¹ÑÐ¾Ð²." << endl << "2: Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ ÑÐ¿Ð¸ÑÐ¾Ðº Ñ€ÐµÐ¹ÑÐ¾Ð²." << endl << "3: ÐŸÐ¾Ð¸ÑÐº Ñ€ÐµÐ¹ÑÐ¾Ð² Ð¿Ð¾ Ð¿ÑƒÐ½ÐºÑ‚Ñƒ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ." << endl << "0: Ð’Ñ‹Ñ…Ð¾Ð´." << endl;
 		cin >> ch;
 		switch (ch) {
 		case (1):
@@ -32,10 +31,10 @@ int main(){
 			catch (int error){
 				switch (error) {
 				case ERROR_400:
-					cout << endl << "\tÍåò ðåéñîâ â äàííûé ïóíêò íàçíà÷åíèÿ." << endl;
+					cout << endl << "\tÐÐµÑ‚ Ñ€ÐµÐ¹ÑÐ¾Ð² Ð² Ð´Ð°Ð½Ð½Ñ‹Ð¹ Ð¿ÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ." << endl;
 					break;
 				default:
-					cout << endl << "\tÍåèçâåñòíàÿ îøèáêà." << endl;
+					cout << endl << "\tÐÐµÐ¸Ð·Ð²ÐµÑÑ‚Ð½Ð°Ñ Ð¾ÑˆÐ¸Ð±ÐºÐ°." << endl;
 				}
 			}
 			break;
@@ -43,7 +42,7 @@ int main(){
 			delete a;
 			return 0;
 		default:
-			cout << "Ïîâòîðèòå ïîïûòêó." << endl;
+			cout << "ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ." << endl;
 		}
 	}
 }

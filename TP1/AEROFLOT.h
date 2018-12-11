@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #define TOMAX 20
 #define TYPEMAX 15
